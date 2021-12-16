@@ -20,12 +20,7 @@ jobs:
           
       - name: Create SSH key
         run: |
-          echo "${{ secrets.GITEE_PRIVATE_KEY }}"
-          echo "${{ secrets.GITEE_USER }}"
-          echo "${{ secrets.GITEE_USER }}"
           echo "${{ github.repository_owner }}"
-          cat ~/.ssh/id_rsa
-          ssh -T git@gitee.com
 
       - name: sync github -> gitee
         uses: Yikun/hub-mirror-action@master
@@ -43,6 +38,8 @@ jobs:
           # account_type: org
           # 直接取当前项目的仓库名
           static_list: ${{ github.event.repository.name }}
+          force_update: true
+          debug: true
           # 还有黑、白名单，静态名单机制，可以用于更新某些指定库
           # static_list: 'repo_name,repo_name2'
           # black_list: 'repo_name,repo_name2'
