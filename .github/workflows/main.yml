@@ -24,7 +24,9 @@ jobs:
           echo "${{ secrets.GITEE_USER }}"
           echo "${{ secrets.GITEE_USER }}"
           echo "${{ github.repository_owner }}"
-          
+          cat ~/.ssh/id_rsa
+          ssh -T git@gitee.com
+
       - name: sync github -> gitee
         uses: Yikun/hub-mirror-action@master
         if: env.dst_key && env.dst_token && env.gitee_user
