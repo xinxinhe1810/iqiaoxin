@@ -6,4 +6,4 @@ yarn install --frozen-lockfile
 
 yarn build
 
-pm2 restart
+pm2 restart iqiaoxin
