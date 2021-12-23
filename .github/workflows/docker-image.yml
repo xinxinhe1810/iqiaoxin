@@ -2,7 +2,10 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    # branches: [ master ]
+
+    tags:
+      - 'v*'
   pull_request:
     branches: [ master ]
 
@@ -46,4 +49,4 @@ jobs:
       -
         name: Image digest
         run: |
-          echo ${{ steps.docker_build.outputs.digest }}
+          echo ${{ steps.docker_build.outputs.digest }} ${{ GITHUB_REF_NAME }} ${{ GITHUB_REF }} ${{ github.ref }}
