@@ -24,16 +24,7 @@ const Home: NextPage = () => {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '} &nbsp;
-            <span>
-              <Image src="/LOVE.png" alt="Vercel Logo" width={22} height={19} />
-            </span>
-        </a>
+        <a className="text-color" href="https://beian.miit.gov.cn" target="_blank" rel="noreferrer">京ICP备2021040357号-1</a>
       </footer>
     </div>
   )
